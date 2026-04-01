@@ -8,6 +8,7 @@ import { toast } from "sonner";
 const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart } = useCart();
+  const navigate = useNavigate();
   const product = products.find((p) => p.id === id);
 
   if (!product) {
