@@ -7,13 +7,25 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1rem",
       screens: {
         "2xl": "1400px",
       },
     },
     extend: {
+      fontFamily: {
+        bengali: ['"Noto Sans Bengali"', 'sans-serif'],
+      },
       colors: {
+        trust: {
+          DEFAULT: "hsl(var(--trust))",
+          foreground: "hsl(var(--trust-foreground))",
+        },
+        offer: {
+          DEFAULT: "hsl(var(--offer))",
+          foreground: "hsl(var(--offer-foreground))",
+        },
+        gold: "hsl(var(--gold))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
