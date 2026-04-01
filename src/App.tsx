@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
+import ProductLanding from "./pages/ProductLanding";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Consultation from "./pages/Consultation";
