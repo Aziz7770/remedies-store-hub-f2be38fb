@@ -1,5 +1,5 @@
-import { useParams, Link } from "react-router-dom";
-import { ShoppingCart, Star, ArrowLeft, CheckCircle } from "lucide-react";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { ShoppingCart, Star, ArrowLeft, CheckCircle, CreditCard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { products } from "@/data/products";
