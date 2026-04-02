@@ -13,6 +13,10 @@ const Checkout = () => {
   const navigate = useNavigate();
   const [submitted, setSubmitted] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const deliveryCharge = totalPrice >= 500 ? 0 : 60;
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
