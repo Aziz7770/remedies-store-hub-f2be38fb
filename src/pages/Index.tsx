@@ -19,15 +19,12 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 to-foreground/40" />
         </div>
         <div className="container relative py-16 md:py-28">
-          <div className="max-w-lg">
-            <span className="inline-block rounded-full bg-primary/20 px-3 py-1 text-xs font-semibold text-primary-foreground backdrop-blur">
-              ✨ বিশ্বস্ত হোমিওপ্যাথিক চিকিৎসা
-            </span>
-            <h2 className="mt-4 text-3xl font-bold leading-tight text-primary-foreground md:text-5xl">
-              প্রাকৃতিক চিকিৎসায় <span className="text-gold">সুস্থ জীবন</span>
+         <div className="max-w-lg">
+            <h2 className="text-3xl font-extrabold leading-tight text-primary-foreground md:text-5xl">
+              প্রাকৃতিক চিকিৎসায় গড়ে তুলুন <span className="text-gold">সুস্থ জীবন</span>
             </h2>
-            <p className="mt-4 text-sm text-primary-foreground/80 md:text-base">
-              ১০০% আসল ও কার্যকর হোমিওপ্যাথিক ঔষধ সরাসরি আপনার ঘরে। বিশেষজ্ঞ ডাক্তারের পরামর্শ সম্পূর্ণ ফ্রি।
+            <p className="mt-4 text-base text-primary-foreground/90 md:text-lg">
+              বিসমিল্লাহ হোমিও চেম্বার আপনাদের বিশ্বাস এবং আস্থার জায়গা। বিশেষজ্ঞ ডাক্তারের পরামর্শ নিন সম্পূর্ণ ফ্রি।
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button asChild size="lg">
@@ -35,7 +32,7 @@ const Index = () => {
                   ঔষধ দেখুন <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+              <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
                 <Link to="/consultation">ফ্রি পরামর্শ নিন</Link>
               </Button>
             </div>
