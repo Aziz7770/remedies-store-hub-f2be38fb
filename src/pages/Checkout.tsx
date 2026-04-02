@@ -13,6 +13,7 @@ const OWNER_WHATSAPP = "8801767678562";
 
 const Checkout = () => {
   const { items, totalPrice, clearCart } = useCart();
+  const { addOrder } = useOrders();
   const navigate = useNavigate();
   const [submitted, setSubmitted] = useState(false);
   const orderItemsRef = useRef(items);
