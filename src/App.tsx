@@ -55,6 +55,7 @@ const App = () => (
                     <Route path="/privacy" element={<Privacy />} />
                     <Route path="/terms" element={<Terms />} />
                     <Route path="/return-policy" element={<ReturnPolicy />} />
+                    <Route path="/admin/orders" element={<AdminOrders />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                   <Footer />
