@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Phone, MessageCircle, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,6 +8,10 @@ import doctorImg from "@/assets/doctor-consultation.jpg";
 import { toast } from "sonner";
 
 const Consultation = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success("আপনার পরামর্শের অনুরোধ পাঠানো হয়েছে! শীঘ্রই ডাক্তার যোগাযোগ করবেন।");
@@ -23,7 +28,7 @@ const Consultation = () => {
 
           <div className="mt-6 space-y-4">
             {[
-              { icon: Phone, title: "ফোনে পরামর্শ", desc: "০১৭XX-XXXXXX নম্বরে কল করুন" },
+              { icon: Phone, title: "ফোনে পরামর্শ", desc: "০১৭৬৭৬৭৮৫৬২ নম্বরে কল করুন" },
               { icon: MessageCircle, title: "WhatsApp পরামর্শ", desc: "WhatsApp-এ মেসেজ পাঠান" },
               { icon: Clock, title: "সময়সূচী", desc: "সকাল ১০টা - রাত ১০টা (প্রতিদিন)" },
             ].map((item) => (
@@ -47,6 +52,7 @@ const Consultation = () => {
             <h3 className="text-lg font-semibold text-foreground">পরামর্শের জন্য আবেদন</h3>
             <div><Label htmlFor="name">আপনার নাম *</Label><Input id="name" required placeholder="পূর্ণ নাম" /></div>
             <div><Label htmlFor="phone">মোবাইল নম্বর *</Label><Input id="phone" required placeholder="০১XXXXXXXXX" type="tel" /></div>
+            <div><Label htmlFor="age">বয়স *</Label><Input id="age" required placeholder="যেমন: ২৫" type="number" min="1" max="120" /></div>
             <div><Label htmlFor="problem">আপনার সমস্যা *</Label><Textarea id="problem" required placeholder="আপনার সমস্যা বিস্তারিত লিখুন..." rows={5} /></div>
             <div><Label htmlFor="duration">কতদিন ধরে সমস্যা?</Label><Input id="duration" placeholder="যেমন: ৬ মাস" /></div>
             <Button type="submit" size="lg" className="w-full">পরামর্শের অনুরোধ পাঠান</Button>
