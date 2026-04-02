@@ -21,6 +21,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import ReturnPolicy from "./pages/ReturnPolicy";
 import NotFound from "./pages/NotFound";
+import AdminOrders from "./pages/AdminOrders";
 
 const queryClient = new QueryClient();
 
