@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { products, testimonials } from "@/data/products";
 import { toast } from "sonner";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ProductLanding = () => {
   const { slug } = useParams();
@@ -18,6 +18,10 @@ const ProductLanding = () => {
   const product = products.find((p) => p.slug === slug);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [viewers] = useState(Math.floor(Math.random() * 30) + 15);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
 
   if (!product) {
     return (
