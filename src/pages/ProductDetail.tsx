@@ -28,6 +28,7 @@ const ProductDetail = () => {
   const discount = product.originalPrice
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0;
+  const reviews = productReviews[product.id] || [];
 
   return (
     <div className="container py-8">
