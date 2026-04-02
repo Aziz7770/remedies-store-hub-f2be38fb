@@ -17,10 +17,10 @@ const Contact = () => {
       <div className="mt-8 grid gap-8 md:grid-cols-2">
         <div className="space-y-4">
           {[
-            { icon: Phone, title: "ফোন", desc: "০১৭XX-XXXXXX" },
-            { icon: Mail, title: "ইমেইল", desc: "info@homeocare.com" },
-            { icon: MapPin, title: "ঠিকানা", desc: "ঢাকা, বাংলাদেশ" },
-            { icon: Clock, title: "সময়সূচী", desc: "সকাল ১০টা - রাত ১০টা" },
+            { icon: Phone, title: "ফোন", desc: "০১৭৬৭৬৭৮৫৬২" },
+            { icon: Mail, title: "ইমেইল", desc: "bismillahhomeochamber@gmail.com" },
+            { icon: MapPin, title: "ঠিকানা", desc: "গোপালগঞ্জ, কাশিয়ানী উপজেলা কেন্দ্রীয় জামে মসজিদ সংলগ্ন" },
+            { icon: Clock, title: "সময়সূচী", desc: "দিবা রাত্রি সেবা চালু" },
           ].map((item) => (
             <div key={item.title} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
