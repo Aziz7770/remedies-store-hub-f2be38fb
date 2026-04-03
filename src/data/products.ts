@@ -155,6 +155,7 @@ export const products: Product[] = [
     name: "জাবোরান্ডি Q (মাদার টিংচার)",
     nameEn: "Jaborandi Q",
     price: 200,
+    originalPrice: 230,
     image: "https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=400",
     category: "hair",
     description: "চুল পড়া রোধ ও নতুন চুল গজাতে অত্যন্ত কার্যকর হোমিওপ্যাথিক ঔষধ।",
