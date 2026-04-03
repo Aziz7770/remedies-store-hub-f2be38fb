@@ -37,6 +37,7 @@ export const products: Product[] = [
     name: "আর্নিকা মন্টানা ৩০",
     nameEn: "Arnica Montana 30",
     price: 120,
+    originalPrice: 140,
     image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400",
     category: "general",
     description: "ব্যথা, আঘাত ও পেশী ব্যথায় অত্যন্ত কার্যকর হোমিওপ্যাথিক ঔষধ। শরীরে কোনো আঘাত বা ব্যথা হলে এটি দ্রুত উপশম দেয়।",
