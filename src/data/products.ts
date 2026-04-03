@@ -116,6 +116,7 @@ export const products: Product[] = [
     name: "লাইকোপোডিয়াম ২০০",
     nameEn: "Lycopodium 200",
     price: 140,
+    originalPrice: 160,
     image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400",
     category: "sexual",
     description: "যৌন দুর্বলতা, শারীরিক দুর্বলতা ও হজম সমস্যায় কার্যকর।",
