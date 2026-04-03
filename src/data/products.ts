@@ -136,6 +136,7 @@ export const products: Product[] = [
     name: "ফসফরাস ৩০",
     nameEn: "Phosphorus 30",
     price: 110,
+    originalPrice: 125,
     image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400",
     category: "respiratory",
     description: "কাশি, শ্বাসকষ্ট ও ফুসফুসের বিভিন্ন সমস্যায় কার্যকর।",
