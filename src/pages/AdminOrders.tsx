@@ -39,12 +39,31 @@ const statusConfig: Record<OrderStatus, { label: string; color: string; icon: Re
 
 const ORDERS_PER_PAGE = 10;
 
+const ADMIN_PASSWORD = "bismillah2025";
+
 const AdminOrders = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [passwordInput, setPasswordInput] = useState("");
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<OrderStatus | "all">("all");
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+
+  const handleLogin = () => {
+    if (passwordInput === ADMIN_PASSWORD) {
+      setIsAuthenticated(true);
+      sessionStorage.setItem("admin_auth", "true");
+    } else {
+      toast.error("পাসওয়ার্ড ভুল হয়েছে!");
+    }
+  };
+
+  useEffect(() => {
+    if (sessionStorage.getItem("admin_auth") === "true") {
+      setIsAuthenticated(true);
+    }
+  }, []);
 
   const fetchOrders = async () => {
     setLoading(true);
@@ -125,6 +144,24 @@ const AdminOrders = () => {
       minute: "2-digit",
     });
   };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="container py-20 flex flex-col items-center gap-4">
+        <Lock className="h-12 w-12 text-muted-foreground" />
+        <h2 className="text-xl font-bold text-foreground">অ্যাডমিন লগইন</h2>
+        <input
+          type="password"
+          placeholder="পাসওয়ার্ড দিন"
+          value={passwordInput}
+          onChange={(e) => setPasswordInput(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+          className="border border-border rounded-lg px-4 py-2 w-64 text-center bg-card text-foreground"
+        />
+        <Button onClick={handleLogin}>প্রবেশ করুন</Button>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
