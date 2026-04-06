@@ -39,12 +39,31 @@ const statusConfig: Record<OrderStatus, { label: string; color: string; icon: Re
 
 const ORDERS_PER_PAGE = 10;
 
+const ADMIN_PASSWORD = "bismillah2025";
+
 const AdminOrders = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [passwordInput, setPasswordInput] = useState("");
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<OrderStatus | "all">("all");
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+
+  const handleLogin = () => {
+    if (passwordInput === ADMIN_PASSWORD) {
+      setIsAuthenticated(true);
+      sessionStorage.setItem("admin_auth", "true");
+    } else {
+      toast.error("পাসওয়ার্ড ভুল হয়েছে!");
+    }
+  };
+
+  useEffect(() => {
+    if (sessionStorage.getItem("admin_auth") === "true") {
+      setIsAuthenticated(true);
+    }
+  }, []);
 
   const fetchOrders = async () => {
     setLoading(true);
