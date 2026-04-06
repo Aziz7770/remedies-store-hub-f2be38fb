@@ -1,3 +1,5 @@
+import gynecomastiaComboImg from "@/assets/gynecomastia-combo.jpg";
+
 export interface Product {
   id: string;
   slug: string;
