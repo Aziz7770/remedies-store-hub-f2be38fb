@@ -178,7 +178,7 @@ export const products: Product[] = [
     nameEn: "Gynecomastia Combo Pack",
     price: 1800,
     originalPrice: 2200,
-    image: "",
+    image: gynecomastiaComboImg,
     category: "gynecomastia",
     description: "গাইনেকোমাস্টিয়া (পুরুষের বুকে চর্বি জমা) সমস্যার জন্য বিশেষ কম্বো প্যাক। Gynecomastia Drop + Testo Balance Drop 30X — জার্মান Dr. Willmar তৈরি।",
     problem: "পুরুষের বুকে অতিরিক্ত চর্বি জমে বুক বড় হয়ে যাচ্ছে? আত্মবিশ্বাস কমে যাচ্ছে? টি-শার্ট পরতে লজ্জা লাগছে?",
