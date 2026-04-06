@@ -2,6 +2,14 @@ import gynecomastiaComboImg from "@/assets/gynecomastia-combo.jpg";
 import lycopodiumQImg from "@/assets/lycopodium-q.jpg";
 import damiana1xImg from "@/assets/damiana-1x.jpg";
 import cydoniaVulgarisImg from "@/assets/cydonia-vulgaris.jpg";
+import homeoBottle1 from "@/assets/homeo-bottle-1.jpg";
+import homeoBottle2 from "@/assets/homeo-bottle-2.jpg";
+import homeoBottle3 from "@/assets/homeo-bottle-3.jpg";
+import homeoBottle4 from "@/assets/homeo-bottle-4.jpg";
+import homeoBottle5 from "@/assets/homeo-bottle-5.jpg";
+import homeoBottle6 from "@/assets/homeo-bottle-6.jpg";
+import homeoBottle7 from "@/assets/homeo-bottle-7.jpg";
+import homeoBottle8 from "@/assets/homeo-bottle-8.jpg";
 
 export interface Product {
   id: string;
