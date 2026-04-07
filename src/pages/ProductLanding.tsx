@@ -57,40 +57,6 @@ const ProductLanding = () => {
 
   const testimonials = [
     { id: 1, name: "আব্দুল করিম", location: "ঢাকা", text: "দারুণ ফলাফল পেয়েছি!", rating: 5, product: product.name },
-  ];
-  const displayTestimonials = testimonials;
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [viewers] = useState(Math.floor(Math.random() * 30) + 15);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [slug]);
-
-  if (!product) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-background">
-        <div className="text-center">
-          <p className="text-lg text-muted-foreground">পেজটি পাওয়া যায়নি</p>
-          <Button className="mt-4" onClick={() => navigate("/products")}>সকল ঔষধ দেখুন</Button>
-        </div>
-      </div>
-    );
-  }
-
-  const discount = product.originalPrice
-    ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
-    : 0;
-
-  const handleOrder = () => {
-    addToCart(product);
-    toast.success("অর্ডার প্রস্তুত! আপনার তথ্য দিন।");
-    navigate("/checkout");
-  };
-
-  const relatedTestimonials = testimonials.filter(
-    (t) => t.product === product.name || t.product === product.nameEn
-  );
-  const displayTestimonials = relatedTestimonials.length > 0 ? relatedTestimonials : testimonials.slice(0, 3);
 
   const whatsappNumber = "8801767678562";
   const whatsappMessage = encodeURIComponent(`আমি ${product.name} সম্পর্কে জানতে চাই।`);
