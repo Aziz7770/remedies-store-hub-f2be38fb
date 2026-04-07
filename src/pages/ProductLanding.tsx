@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
-import { products, testimonials } from "@/data/products";
+import { useProducts, toOldProduct } from "@/hooks/useProducts";
 import { toast } from "sonner";
 import { useState, useEffect } from "react";
 
@@ -15,7 +15,50 @@ const ProductLanding = () => {
   const { slug } = useParams();
   const { addToCart } = useCart();
   const navigate = useNavigate();
+  const { products, loading } = useProducts();
   const product = products.find((p) => p.slug === slug);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [viewers] = useState(Math.floor(Math.random() * 30) + 15);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="h-10 w-10 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+      </div>
+    );
+  }
+
+  if (!product) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="text-center">
+          <p className="text-lg text-muted-foreground">পেজটি পাওয়া যায়নি</p>
+          <Button className="mt-4" onClick={() => navigate("/products")}>সকল ঔষধ দেখুন</Button>
+        </div>
+      </div>
+    );
+  }
+
+  const old = toOldProduct(product);
+
+  const discount = product.original_price
+    ? Math.round(((Number(product.original_price) - Number(product.price)) / Number(product.original_price)) * 100)
+    : 0;
+
+  const handleOrder = () => {
+    addToCart(old);
+    toast.success("অর্ডার প্রস্তুত! আপনার তথ্য দিন।");
+    navigate("/checkout");
+  };
+
+  const testimonials = [
+    { id: 1, name: "আব্দুল করিম", location: "ঢাকা", text: "দারুণ ফলাফল পেয়েছি!", rating: 5, product: product.name },
+  ];
+  const displayTestimonials = testimonials;
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [viewers] = useState(Math.floor(Math.random() * 30) + 15);
 
