@@ -117,7 +117,7 @@ const ProductLanding = () => {
           {/* Product Image */}
           <div className="relative mx-auto mt-5 h-48 w-48">
             <img
-              src={product.image}
+              src={product.image_url}
               alt={product.name}
               className="h-full w-full rounded-2xl object-cover shadow-lg"
               loading="eager"
@@ -137,8 +137,8 @@ const ProductLanding = () => {
           {/* Price */}
           <div className="mt-5 flex items-center justify-center gap-3">
             <span className="text-3xl font-extrabold text-foreground">৳{product.price}</span>
-            {product.originalPrice && (
-              <span className="text-base text-muted-foreground line-through">৳{product.originalPrice}</span>
+            {product.original_price && (
+              <span className="text-base text-muted-foreground line-through">৳{product.original_price}</span>
             )}
             {discount > 0 && (
               <span className="rounded-md bg-destructive px-2 py-0.5 text-xs font-bold text-destructive-foreground">
@@ -352,7 +352,7 @@ const ProductLanding = () => {
               <Star key={i} className="h-5 w-5 fill-gold text-gold" />
             ))}
             <span className="ml-1.5 text-xs font-bold text-foreground">{product.rating}</span>
-            <span className="text-xs text-muted-foreground">({product.reviews}+ রিভিউ)</span>
+            <span className="text-xs text-muted-foreground">({product.reviews_count}+ রিভিউ)</span>
           </div>
 
           <div className="mt-5 space-y-3">
@@ -400,7 +400,7 @@ const ProductLanding = () => {
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/15">
                   <Clock className="h-5 w-5 text-primary" />
                 </div>
-                <p className="text-[13px] font-medium leading-relaxed text-foreground">{product.usage}</p>
+                <p className="text-[13px] font-medium leading-relaxed text-foreground">{product.usage_info}</p>
               </div>
               <div className="mt-4 grid grid-cols-3 gap-2">
                 <div className="rounded-xl bg-primary/5 p-2.5 text-center">
@@ -434,8 +434,8 @@ const ProductLanding = () => {
             )}
             <div className="mt-2 flex items-baseline justify-center gap-2">
               <span className="text-3xl font-extrabold">৳{product.price}</span>
-              {product.originalPrice && (
-                <span className="text-base opacity-60 line-through">৳{product.originalPrice}</span>
+              {product.original_price && (
+                <span className="text-base opacity-60 line-through">৳{product.original_price}</span>
               )}
             </div>
             <div className="mt-2.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] opacity-90">
@@ -527,8 +527,8 @@ const ProductLanding = () => {
           <div className="flex-1">
             <div className="flex items-baseline gap-1.5">
               <span className="text-xl font-extrabold text-primary">৳{product.price}</span>
-              {product.originalPrice && (
-                <span className="text-xs text-muted-foreground line-through">৳{product.originalPrice}</span>
+              {product.original_price && (
+                <span className="text-xs text-muted-foreground line-through">৳{product.original_price}</span>
               )}
             </div>
             <p className="text-[10px] text-muted-foreground">💵 Cash on Delivery</p>
